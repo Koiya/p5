@@ -1,65 +1,82 @@
-function setup() {
-  createCanvas(400, 400);
+const ExampleOne = (a) =>{
+  a.setup = () =>{
+    a.createCanvas(150, 90);
+  }
+  a.draw = () => {
+    a.background('rgb(0,255,0)');
+    a.ellipse(40,40,50,50)
+    a.square(80,15,50)
+  }
 }
-
-//Example 1
-/*
-function draw() {
-  background('rgb(0,255,0)');
-  ellipse(50,50,50,50)
-  square(100,25,50)
-}*/
+var myp5 = new p5(ExampleOne, 'c1')
 
 //Example 2
-/*
-function draw() {
-  noStroke();
-  background(255);
-  fill('rgba(255,0,0,0.30)');
-  ellipse(140,140,100,100);
-  fill('rgba(0,255,0,0.30)');
-  ellipse(170,200,100,100);
-  fill('rgba(0,0,255,0.30)');
-  ellipse(110,200,100,100);
-}
-*/
-//Example 3
-/*
-function draw(){
-  angleMode(DEGREES);
-  background(0);
-  noStroke();
-  fill('yellow');
-  arc(100, 100, 50, 50, 220, 150);
-  fill('red');
-  ellipse(200,100,50,50)
-  rect(175,95,50,30)
-  fill('white')
-  ellipse(188,100,13,13);
-  ellipse(212,100,13,13);
-  fill('blue')
-  ellipse(188,100,8,8);
-  ellipse(212,100,8,8);
 
-}*/
-function draw(){
-  background('blue');
-  fill('white');
-  noStroke();
-  ellipse(100,100,80,80);
-  star(100, 100, 20, 50, 5);
-}
-function star(x, y, radius1, radius2, npoints) {
-  let angle = TWO_PI / npoints;
-  let halfAngle = angle / 2.0;
-  beginShape();
-  for (let a = 0; a < TWO_PI; a += angle) {
-    let sx = x + cos(a) * radius2;
-    let sy = y + sin(a) * radius2;
-    vertex(sx, sy);
-    sx = x + cos(a + halfAngle) * radius1;
-    sy = y + sin(a + halfAngle) * radius1;
-    vertex(sx, sy);
+const ExampleTwo = (b) => {
+  b.setup = () =>{
+    b.createCanvas(200,150);
   }
-  endShape(CLOSE);
+  b.draw = () => {
+    b.noStroke();
+    b.background(255);
+    b.fill('rgba(255,0,0,0.30)');
+    b.ellipse(100,50,80,80);
+    b.fill('rgba(0,255,0,0.30)');
+    b.ellipse(125,95,80,80);
+    b.fill('rgba(0,0,255,0.30)');
+    b.ellipse(75,95,80,80);
+  }
 }
+var myp5 = new p5(ExampleTwo, 'c2')
+//Example 3
+
+const ExampleThree = (c) => {
+  c.setup = () =>{
+    c.createCanvas(170,100);
+  }
+  c.draw = () =>{
+    c.angleMode(c.DEGREES)
+    c.background(0);
+    c.noStroke();
+    c.fill('yellow');
+    c.arc(50, 50, 50, 50, 220, 150);
+    c.fill('red');
+    c.ellipse(115,50,50,50)
+    c.rect(90,45,50,30)
+    c.fill('white')
+    c.ellipse(127,50,15,15);
+    c.ellipse(103,50,15,15);
+    c.fill('blue')
+    c.ellipse(127,50,9,9);
+    c.ellipse(103,50,9,9);
+  }
+}
+var myp5 = new p5(ExampleThree, 'c3')
+
+const ExampleFour = (d) => {
+  d.setup = () =>{
+    d.createCanvas(200,200);
+  }
+  d.draw = () => {
+    d.background('blue');
+    d.stroke(255);
+    d.strokeWeight(3);
+    d.fill('green');
+    d.ellipse(100,100,80,80);
+    d.fill('red');
+    d.translate(100,100);
+    d.beginShape();
+    d.vertex(0, -45);
+    d.vertex(10, -15);
+    d.vertex(40, -15);
+    d.vertex(15, 7);
+    d.vertex(25, 33);
+    d.vertex(0, 15);
+    d.vertex(-25, 33);
+    d.vertex(-15, 7);
+    d.vertex(-40, -15);
+    d.vertex(-10, -15);
+    d.endShape(d.CLOSE);
+  }
+}
+var myp5 = new p5(ExampleFour, 'c4')
