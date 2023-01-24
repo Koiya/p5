@@ -46,7 +46,7 @@ function draw(){
   background('blue');
   fill('white');
   noStroke();
-  //ellipse(100,100,80,80);
+  ellipse(100,100,80,80);
   star(100, 100, 20, 50, 5);
 }
 function star(x, y, radius1, radius2, npoints) {
